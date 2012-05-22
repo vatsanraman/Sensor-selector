@@ -12,7 +12,7 @@ class Plotter:
         self.name = name
         self.X = _X
         self.Y = _Y
-        self.Z = _Z
+        self.Z = self.normalize(_Z)
         print "Initializing plotter object ...", self.name
 
     def plot(self):
@@ -24,3 +24,8 @@ class Plotter:
         bar = fig.colorbar(ax.collections[0])
         plt.show()
         fig.savefig('%s.png'%self.name)
+
+    def normalize(self, L):
+        normalizeTo = 1
+        vMax = max(L)
+        return [ float('%1.4f'%(x/(vMax*1.0)*normalizeTo)) for x in L]
