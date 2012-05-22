@@ -36,4 +36,4 @@ class Experiment:
             d = decimal.Decimal(cell_value) 
             timecourse.append(float('%1.4f'%d))
         return timecourse
-        
+
