@@ -10,12 +10,17 @@ class WellContent:
         self.parse()
 
     def parse(self):
-        _wellcontent_tmp = {}
+        __wellcontent = {}
         _wellcontent = open(self.name,'r')
         line = _wellcontent.readline()
         while line:
             l = string.split(line)
-            if not _wellcontent_tmp.has_key(l[0]):
-                _wellcontent_tmp[l[0]] = float(l[1])
+            if not __wellcontent.has_key(l[0]):
+                __wellcontent[l[0]] = float(l[1])
             line = _wellcontent.readline()
-        print _wellcontent_tmp
+        self.wellcontent = __wellcontent
+        print __wellcontent
+    
+    def conc_at(self,wellid):
+        return self.wellcontent[wellid]
+
