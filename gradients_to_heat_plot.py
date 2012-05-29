@@ -46,7 +46,7 @@ def parse_excel_sheet():
     try:
         assert(data_row <= max_rows)
     except AssertionError:
-        print "Number of time points is lesser than your requested time point"
+        print "Total number of time points is lesser than your requested time point"
         exit()
     plate_rows = ['A','B','C','D','E','F','G','H']
     plate_data = {}

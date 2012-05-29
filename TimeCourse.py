@@ -18,3 +18,6 @@ class TimeCourse:
     def mean(self):
         return float('%1.4f'%stats.lmean(self.datapoints))
 
+    def median(self):
+        return float('%1.4f'%stats.lmedian(self.datapoints))
+
