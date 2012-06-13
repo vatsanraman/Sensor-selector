@@ -21,3 +21,8 @@ class TimeCourse:
     def median(self):
         return float('%1.4f'%stats.lmedian(self.datapoints))
 
+    def max_val(self):
+        return float('%1.4f'%max(self.datapoints))
+    
+    def final_val(self):#last datapoints in the timecourse
+        return float('%1.4f'%self.datapoints[len(self.datapoints)-1])
